@@ -1,0 +1,35 @@
+
+public class MergeSortNR extends BubbleSort{
+
+	
+	
+	
+	
+	
+	public MergeSortNR(int[] l, String sortName) {
+		super(l, sortName);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	
+	
+	
+	@Override
+	public void executeAlgorithm() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private void merge(int s1, int e1, int s2,int end2) {
+		System.out,println("Hi Merge This")
+		
+	}
+	
+	public static void main(String [] args) {
+		
+	}
+	
+
+}

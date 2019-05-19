@@ -1,0 +1,27 @@
+import javax.swing.JOptionPane; 
+
+public class MadLib {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		JOptionPane.showMessageDialog(null, "We are doing a Mad Lib");
+		String noun1 = JOptionPane.showInputDialog("Give me an noun");
+		String place1 = JOptionPane.showInputDialog("Give me a place"); 
+		String activity1 = JOptionPane.showInputDialog("Give me a activity");
+		String activity2 = JOptionPane.showInputDialog("Give me a activity");
+		String years = JOptionPane.showInputDialog("Give me a number");
+		String noun2 = JOptionPane.showInputDialog("Give me a noun");
+		String noun3 = JOptionPane.showInputDialog("Give me a noun");
+		String activity3 = JOptionPane.showInputDialog("Give me a activity");
+		String event1 = JOptionPane.showInputDialog("Give me a event");
+		String activity3 = JOptionPane.showInputDialog("Give me a activity");
+		
+		JOptionPane.showInputDialog("Please give me a ...")
+		
+		System.out.println("Long time ago in a galaxy far far away , there lived a " + "noun1. " + "It lived in a " +"place1."+" Every day, it would " +" activity1 "+"and"+" activity2. "+" It spent"+" years" +" years living on its own waiting for a "+" noun2." +" Oneday, a" +" noun3 "+"came and "+"activity3.");
+
+
+	}
+
+}

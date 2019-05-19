@@ -1,0 +1,74 @@
+import java.awt.Color;
+
+import com.sun.prism.Graphics;
+
+public class PenteBoardSquare {
+	
+	private int xLoc,yLoc;
+	private int sWidth,sHeight;
+	
+	private int sState;
+	
+	private Color sColor;
+	private Color lColor;
+	private Color bColor;
+	private Color innerC;
+	boolean isInner = false;
+	
+	
+	public PenteBoardSquare(int x, int y, int w, int h) {
+		
+		xLoc = x;
+		yLoc = y;
+		sWidth = w;
+		sHeight = h;
+		
+		
+		
+		sColor = new Color(255, 238, 183);
+		lColor = new Color(83,85,89);
+		bColor = Color.YELLOW;
+		innerC = Color.YELLOW;
+		
+		sState = PenteGameBoard.EMPTY;
+		
+		
+	}
+	
+	public void setInner() {
+		isInner = true;
+	}
+	
+	
+	public void drawMe(java.awt.Graphics g) {
+		
+		if (isInner == true) {
+			g.setColor(innerC);
+		} else {
+			g.setColor(sColor);
+		}
+		g.fillRect(xLoc, yLoc, sWidth, sHeight);
+		
+		//border color 
+		
+		g.setColor(sColor);
+		g.fillRect(xLoc, yLoc, sWidth, sHeight);
+	
+	
+		g.setColor(bColor);
+		g.drawRect(xLoc, yLoc, sWidth, sHeight);
+	
+		g.setColor(lColor);
+		g.drawLine(xLoc, yLoc + sHeight/2,xLoc +sWidth, yLoc+sHeight/2);
+		g.drawLine(xLoc + sWidth/2, yLoc, xLoc+sWidth/2,yLoc+sHeight);
+	
+	
+	
+	
+	
+	}
+	
+	
+	
+
+}

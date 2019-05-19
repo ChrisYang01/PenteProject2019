@@ -1,0 +1,93 @@
+import java.awt.Color;
+
+import com.sun.prism.Graphics;
+
+public class PenteBoardSquare {
+	
+	private int xLoc,yLoc;
+	private int sWidth,sHeight;
+	
+	private int sState;
+	
+	private Color sColor;
+	private Color lColor;
+	private Color bColor;
+	private Color innerC;
+	private Color darkStoneColor = new Color(4,9,84);
+	private Color whiteStoneColor = new Color(255,255,255);
+	boolean isInner = false;
+	
+	
+	public PenteBoardSquare(int x, int y, int w, int h) {
+		
+		xLoc = x;
+		yLoc = y;
+		sWidth = w;
+		sHeight = h;
+		
+		
+		
+		sColor = new Color(249, 218, 124);
+		lColor = new Color(83,85,89);
+		bColor = new Color (240, 240, 190);
+		innerC = new Color(255, 238, 134);
+		
+		sState = PenteGameBoard.EMPTY;
+		
+		
+	}
+	
+	public void setInner() {
+		isInner = true;
+	}
+	
+	
+	public void drawMe(java.awt.Graphics g) {
+		
+		if (isInner == true) {
+			g.setColor(innerC);
+		} else {
+			g.setColor(sColor);
+		}
+		g.fillRect(xLoc, yLoc, sWidth, sHeight);
+		
+		//border color 
+		
+		g.setColor(sColor);
+		g.fillRect(xLoc, yLoc, sWidth, sHeight);
+	
+	
+		g.setColor(bColor);
+		g.drawRect(xLoc, yLoc, sWidth, sHeight);
+	
+		g.setColor(lColor);
+		g.drawLine(xLoc, yLoc + sHeight/2,xLoc +sWidth, yLoc+sHeight/2);
+		g.drawLine(xLoc + sWidth/2, yLoc, xLoc+sWidth/2,yLoc+sHeight);
+	
+		if(sState == PenteGameBoard.BLACKSTONE) {
+			g.setColor(darkStoneColor);
+			g.fillOval(xLoc +3 , yLoc +3, sWidth-6, sHeight-6);
+		}
+		
+		if(sState == PenteGameBoard.WHITESTONE) {
+			g.setColor(whiteStoneColor);
+			g.fillOval(xLoc +4 , yLoc +4, sWidth-8, sHeight-8);
+		}
+	
+	
+	
+	}
+	
+	public void setState(int newState) {
+		if (newState < -1 || newState >1) {
+			System.out.println(newState + "is an illegal. State must be between -1 and 1");
+		} else {
+			sState = newState;
+		}
+		 
+	}
+	
+	
+	
+
+}

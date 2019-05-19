@@ -1,0 +1,63 @@
+
+public class MergeSortNR extends BubbleSort{
+	int[]TempArray;
+	int[]array;
+
+	
+	
+	
+	
+	
+	public MergeSortNR(int[] l, String sortName) {
+		super(l, sortName);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	
+	
+	
+	@Override
+	public void executeAlgorithm() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	 void merge(int start1, int end1, int start2,int end2) {
+		System.out.println("Hi Merge This");
+		
+		int[] temp = new int[(end1-start1 +1) + (end2-start2 +1)];
+		
+		
+		for(int i = start1, t=0;i< end2; ++i,t++) {
+			
+			TempArray[i]= array[i];
+			//this.setElement(i, temp[t]);
+		
+		int j= end2+1;
+		int k= start1;
+		while(i <= end1 && j<= end2) {
+			if(TempArray[i] <= TempArray[j]) {
+				array[k] = TempArray[j];
+				i++;
+			
+				
+			}else {
+			k++;
+		}
+		while(i<end1) {
+			array[k] = TempArray[i];
+			k++;
+			i++;
+		}
+		}
+		}
+	}
+	
+	public static void main(String [] args) {
+		
+	}
+	
+
+}
